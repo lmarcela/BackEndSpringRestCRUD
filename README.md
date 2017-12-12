@@ -72,7 +72,10 @@ Prueba del funcionamiento con Postman:
 
 
 
-## Readme original del Git
+## Comandos de utilidad
+
+Nota: Al crear repositorio en GitHub dice:
+
 	…or create a new repository on the command line
 	
 	echo "# BackEndSpringRestCRUD" >> README.md
@@ -88,13 +91,38 @@ Prueba del funcionamiento con Postman:
 	…or import code from another repository
 	You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
+### COMANDOS PARA GIT
 
-CREAR PROYECTO ANGULAR (RESTCLIENT): ng new FrontEndAngularRestCRUD (Creado dentro de la carpeta \src\main\resources\static).
-ABRIR PROYECTO EN VSCODE DESDE CONSOLA: code . (Dentro de la carpeta src\main\resources\\static\FrontEndAngularRestCRUD).
-BOOTSTRAP: npm install bootstrap@next --save (Dentro de la carpeta src\main\resources\\static\FrontEndAngularRestCRUD).
+	VERSION: git --version
+	USUARIO: git config --global user.name "Marcela Malaver"
+	EMAIL: git config --global user.email "marcela9409@gmail.com"
+	ALIAS PARA LOGIN: git config --global alias.lg "log --oneline --decorate --all --graph"
+	ALIAS PARA STATUS: git config --global alias.s "status -s"
+	VER URL REPOSITORIO: git remote -v
+	PONER URL REPOSITORIO: git remote add origin https://github.com/lmarcela/BackEndSpringRestCRUD.git
+	SUBIR CAMBIOS: git push -u origin master
+	
+	VER ESTADO DE GIT: git s
+	AÑADIR ARCHIVOS AL GIT: git add .
+	CREAR COMMIT CON MENSAJE: git commit -m "ESTE ES MI MENSAJE"
+	SUBIR AL REPOSITORIO (REVISAR PRIMERO URL DEL REPOSITORIO): git push -u origin master
+	
+	REVERSAR CAMBIOS EN EL GIT: git checkout -- .
 
-ANGULAR:
-- CREAR CLASE: ng g class user
-- CREAR COMPONENTE SIN ARCHIVOS CSS Y SPEC: ng g c components/listuser --spec false -is
-- CREAR SERVICIO SIN SPEC: ng g s services/user --spec false
+
+### COMANDOS ANGULAR
+	
+	INICIAR SERVIDOR (EN LA CARPETA DEL PROYECTO): ng serve -o
+	CREAR COMPONENTE SIN ARCHIVOS CSS Y SPEC: ng g c components/listuser --spec false -is
+	CREAR CLASE: ng g class model/user
+	CREAR SERVICIO SIN SPEC: ng g s services/user --spec false 
+	PONER EN PRODUCCION: ng build --env=prod --prod
+	HTTP-SERVER (SOLO LA PRIMERA VEZ): https://www.npmjs.com/package/http-server (npm install http-server -g)
+	EN LA CARPETA DIST DEL PROYECTO: http-server -o 
+	
+	
+	CREAR PROYECTO ANGULAR (RESTCLIENT): ng new FrontEndAngularRestCRUD
+	ABRIR PROYECTO EN VSCODE DESDE CONSOLA (Dentro de la carpeta del proyecto Angular): code . 
+	INSTALAR BOOTSTRAP CON NODEJS(Dentro de la carpeta del proyecto Angular): npm install bootstrap@next --save
+
 
