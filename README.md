@@ -1,3 +1,23 @@
+# BackEndSpringRestCRUD
+
+- Proyecto JAVA con uso de Spring Framework y base de datos h2. El frontEnd esta disponible en: https://github.com/lmarcela/FrontEndAngularRestCRUD
+
+- Proyecto basado en https://www.youtube.com/watch?v=ioYJx-rNNoI&index=1&list=PLF0fAweo0Kogzy5I6LxEaIlJAxVORXZm-
+
+## Funcionamiento de los metodos del controlador 
+
+### METODO GETUSERS
+Código:
+
+	@GetMapping("/")
+	public List<User> getUsers(){
+		return userRepository.findAll();
+	}
+	
+Prueba del funcionamiento con Postman:	
+![getUsers()](https://github.com/lmarcela/BackEndSpringRestCRUD/blob/master/src/main/resources/static/1.png)
+
+
 …or create a new repository on the command line
 
 echo "# BackEndSpringRestCRUD" >> README.md
@@ -25,3 +45,26 @@ ANGULAR:
 
 
 https://www.youtube.com/watch?v=mnzMx3hh6rg&list=PLF0fAweo0Kogzy5I6LxEaIlJAxVORXZm-&index=2
+
+
+
+	@GetMapping("/user/{id}")
+	public User getUser(@PathVariable Long id){
+		return userRepository.findOne(id);
+	}
+
+	@DeleteMapping("/user/{id}")
+	public boolean deleteUser(@PathVariable Long id){
+		userRepository.delete(id);
+		return true;
+	}
+
+	@PostMapping("/user")
+	public User createUser(@RequestBody User user){
+		return userRepository.save(user);
+	}
+
+	@PutMapping("/user")
+	public User updateUser(@RequestBody User user){
+		return userRepository.save(user);
+	}
