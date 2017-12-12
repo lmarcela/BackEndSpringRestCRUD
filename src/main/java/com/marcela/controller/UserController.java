@@ -17,13 +17,12 @@ import com.marcela.model.User;
 import com.marcela.repository.UserRepository;
 
 @RestController
-@RequestMapping("/api")
 @CrossOrigin//(origins="http://localhost:4200/",allowedHeaders="*")
 public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@GetMapping("/users")
+	@GetMapping("/")
 	public List<User> getUsers(){
 		return userRepository.findAll();
 	}

@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 import com.marcela.model.User;
 import com.marcela.repository.UserRepository;
 
 @SpringBootApplication
-public class BackEndSpringRestCrudApplication implements CommandLineRunner{
+public class BackEndSpringRestCrudApplication extends SpringBootServletInitializer implements CommandLineRunner {
 
 	@Autowired
 	private UserRepository userRepository;
@@ -24,4 +26,9 @@ public class BackEndSpringRestCrudApplication implements CommandLineRunner{
 		userRepository.save(new User("two","two"));
 		userRepository.save(new User("three","three"));
 	}
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(BackEndSpringRestCrudApplication.class);
+    }
 }
