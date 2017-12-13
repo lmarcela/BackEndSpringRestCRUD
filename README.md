@@ -109,7 +109,21 @@ Nota: Al crear repositorio en GitHub dice:
 	
 	REVERSAR CAMBIOS EN EL GIT: git checkout -- .
 
-
+#### GUIA PARA CAMBIAR DE REPOSITORIO EN GIT
+	FrontEndAngularRestCRUD>git remote -v
+	origin  https://github.com/lmarcela/BackEndSpringRestCRUD.git (fetch)
+	origin  https://github.com/lmarcela/BackEndSpringRestCRUD.git (push)
+	
+	FrontEndAngularRestCRUD>git remote rm origin
+	
+	FrontEndAngularRestCRUD>git remote -v
+	
+	FrontEndAngularRestCRUD>git remote add origin https://github.com/lmarcela/FrontEndAngularRestCRUD.git
+	
+	FrontEndAngularRestCRUD>git remote -v
+	origin  https://github.com/lmarcela/FrontEndAngularRestCRUD.git (fetch)
+	origin  https://github.com/lmarcela/FrontEndAngularRestCRUD.git (push)
+	
 ### COMANDOS ANGULAR
 	
 	INICIAR SERVIDOR (EN LA CARPETA DEL PROYECTO): ng serve -o
